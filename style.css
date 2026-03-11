@@ -47,3 +47,32 @@ p {
     letter-spacing: 4px;
     text-transform: uppercase;
 }
+.boton:hover {
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+}
+.servicios {
+    display: flex;
+    padding: 60px 40px;
+    border-top: 1px solid #222222;
+    gap: 60px;
+    margin-top: 80px;
+}
+.servicio {
+    flex: 1;
+    text-align: center;
+}
+.servicio h3 {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color:#ffffff;
+    margin-bottom: 12px;
+}
+.servicio p {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #555555;
+    text-transform: none;
+}
