@@ -7,7 +7,7 @@
 body {
     background-color: #000000;
     color: #ffffff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,5 +26,24 @@ p {
     letter-spacing: 4px;
     color: #888888;
     margin-top: 10px;
+    text-transform: uppercase;
+}
+.linea{
+    width: 60%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 30px auto;
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 40px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
