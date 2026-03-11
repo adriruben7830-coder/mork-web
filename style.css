@@ -71,12 +71,13 @@ p {
     text-transform: uppercase;
     color:#ffffff;
     margin-bottom: 12px;
+    transition: color 0.3s ease;
 }
 .servicio p {
     font-size: 13px;
     letter-spacing: 1px;
     color: #555555;
-    text-transform: none;
+    transition: color 0.3s ease;
 }
 @keyframes fadeUp{
     from {
@@ -128,4 +129,23 @@ p{
     z-index: 9999;
     transition: transform 0.1s ease;
     z-index: 9999;
+}
+.servicio {
+    transition: all 0.3s ease;
+    padding: 30px;
+    border: 1px solid #333333;
+
+}
+
+.servicio:hover {
+    border: 1px solid #333333;
+    transform: translateY(-5px);
+    color: #aaaaaa;
+}
+.servicio h3{
+    transition: color 0.3s ease;
+}
+
+.servicio:hover h3 {
+    color: #aaaaaa;
 }
