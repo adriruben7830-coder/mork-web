@@ -359,3 +359,40 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ============================================
+   RESPONSIVE MÓVIL
+   ============================================ */
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px 24px;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .hero h1 {
+    font-size: 60px;
+    letter-spacing: 10px;
+  }
+  .servicios {
+    flex-direction: column;
+    gap: 0px;
+    padding: 40px 24px;
+  }
+  .work {
+    padding: 40px 24px;
+  }
+  .work-item {
+    gap: 12px;
+  }
+.work-info h3 {
+    font-size: 16px;
+  }
+  .contact h2 {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  .section-label {
+    padding: 0 24px;
+  }
+}
