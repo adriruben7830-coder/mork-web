@@ -52,3 +52,17 @@ const intervalo = setInterval(() => {
         clearInterval(intervalo);
     }
 }, 135);
+
+// NAV BLUR AL SCROLL 
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        nav.style.backdropFilter = 'blur(10px)';
+        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    } else {
+        nav.style.backdropFilter = 'none';
+        nav.style.backgroundColor = 'transparent';
+    }
+}
+);
