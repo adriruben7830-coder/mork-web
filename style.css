@@ -289,3 +289,27 @@ body {
   color: #333333;
   text-transform: uppercase;
 }
+/* ============================================
+   SECTIONS
+   ============================================ */  
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 80px;
+  padding: 0 40px;
+}
+
+.section-label span {
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  white-space: nowrap;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background-color: #1a1a1a;
+}
