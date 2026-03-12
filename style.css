@@ -1,186 +1,188 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}   
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    padding-top: 100px;
-    cursor: none;
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Space Grotesk', sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  padding-top: 100px;
+  cursor: none;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 h1 {
-    font-size: 120px;
-    font-weight: 900;
-    letter-spacing: 20px;
-    color: #ffffff;
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: #ffffff;
+  animation: fadeUp 1s ease forwards;
 }
+
 p {
-    font-size: 16px;
-    letter-spacing: 4px;
-    color: #888888;
-    margin-top: 10px;
-    text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #888888;
+  margin-top: 10px;
+  text-transform: uppercase;
+  animation: fadeUp 1s ease 0.3s forwards;
+  opacity: 0;
 }
-.linea{
-    width: 60%;
-    height: 1px;
-    background-color: #ffffff;
-    margin: 30px auto;
+
+.linea {
+  width: 60px;
+  height: 1px;
+  background-color: #ffffff;
+  margin: 30px auto;
 }
 
 .boton {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 14px 40px;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    text-decoration: none;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 40px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  animation: fadeUp 1s ease 0.6s forwards;
+  opacity: 0;
 }
+
 .boton:hover {
-    background-color: #ffffff;
-    color: #000000;
-    cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
 }
+
 .servicios {
-    display: flex;
-    padding: 60px 40px;
-    border-top: 1px solid #222222;
-    gap: 60px;
-    margin-top: 80px;
+  display: flex;
+  width: 100%;
+  padding: 60px 40px;
+  border-top: 1px solid #222222;
+  gap: 60px;
+  margin-top: 80px;
+  animation: fadeUp 1s ease 0.9s forwards;
+  opacity: 0;
 }
+
 .servicio {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 30px;
+  border: 1px solid transparent;
 }
+
 .servicio h3 {
-    font-size: 14px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color:#ffffff;
-    margin-bottom: 12px;
-    transition: color 0.3s ease;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
 }
+
 .servicio p {
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: #555555;
-    transition: color 0.3s ease;
-}
-@keyframes fadeUp{
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-h1{
-    animation: fadeUp 1s ease forwards;
-}
-p{
-    animation: fadeUp 1s ease 0.3s forwards;
-    opacity:0;
-}
-.boton{
-    animation: fadeUp 1s ease 0.6s forwards;
-    opacity: 0;
-}
-.servicios{
-    animation: fadeUp 1s ease 0.9s forwards;
-    opacity: 0;
-}
-.footer{
-    position:fixed;
-    bottom:30px;
-    width:100%;
-    text-align:center;
-}
-
-.footer p{
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: #333333;
-    text-transform: uppercase;
-    animation: none;
-    opacity: 1;
-}
-.cursor{
-    width: 12px;
-    height: 12px;
-    border: 1px solid #ffffff;
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.1s ease;
-    z-index: 9999;
-}
-.servicio {
-    transition: all 0.3s ease;
-    padding: 30px;
-    border: 1px solid #333333;
-
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #555555;
+  text-transform: none;
+  animation: none;
+  opacity: 1;
 }
 
 .servicio:hover {
-    border: 1px solid #333333;
-    transform: translateY(-5px);
-    color: #aaaaaa;
-}
-.servicio h3{
-    transition: color 0.3s ease;
+  border: 1px solid #333333;
+  transform: translateY(-5px);
 }
 
 .servicio:hover h3 {
-    color: #aaaaaa;
+  color: #aaaaaa;
 }
-.nav{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 60px;
-    display: flex;
-    justify-content: space-between;
-    z-index: 100;
-    align-items: center;
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.nav-logo{
-    font-size: 18px;
-    letter-spacing: 6px;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: 900;
+
+.footer {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
 }
-.nav-links{
-    display: flex;
-    gap: 40px;
-    list-style: none;
+
+.footer p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #333333;
+  text-transform: uppercase;
+  animation: none;
+  opacity: 1;
 }
+
+.cursor {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-size: 18px;
+  letter-spacing: 6px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
 .nav-links a {
-    color: #555555;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+  color: #555555;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
 }
+
 .nav-links a:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
