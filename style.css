@@ -1,3 +1,6 @@
+/* ============================================
+   RESET Y BASE
+   ============================================ */
 * {
   scroll-behavior: smooth;
   margin: 0;
@@ -6,7 +9,6 @@
 }
 
 body {
-  padding-top: 100px;
   cursor: none;
   background-color: #000000;
   color: #ffffff;
@@ -18,98 +20,9 @@ body {
   text-align: center;
 }
 
-h1 {
-  font-size: 120px;
-  font-weight: 900;
-  letter-spacing: 20px;
-  color: #ffffff;
-  animation: fadeUp 1s ease forwards;
-}
-
-p {
-  font-size: 16px;
-  letter-spacing: 4px;
-  color: #888888;
-  margin-top: 10px;
-  text-transform: uppercase;
-  animation: fadeUp 1s ease 0.3s forwards;
-  opacity: 0;
-}
-
-.linea {
-  width: 60px;
-  height: 1px;
-  background-color: #ffffff;
-  margin: 30px auto;
-}
-
-.boton {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 14px 40px;
-  border: 1px solid #ffffff;
-  color: #ffffff;
-  text-decoration: none;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  animation: fadeUp 1s ease 0.6s forwards;
-  opacity: 0;
-}
-
-.boton:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.servicios {
-  display: flex;
-  width: 100%;
-  padding: 60px 40px;
-  border-top: 1px solid #222222;
-  gap: 60px;
-  margin-top: 80px;
-  animation: fadeUp 1s ease 0.9s forwards;
-  opacity: 0;
-}
-
-.servicio {
-  flex: 1;
-  text-align: center;
-  transition: all 0.3s ease;
-  padding: 30px;
-  border: 1px solid transparent;
-}
-
-.servicio h3 {
-  font-size: 14px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin-bottom: 12px;
-  transition: color 0.3s ease;
-}
-
-.servicio p {
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: #555555;
-  text-transform: none;
-  animation: none;
-  opacity: 1;
-}
-
-.servicio:hover {
-  border: 1px solid #333333;
-  transform: translateY(-5px);
-}
-
-.servicio:hover h3 {
-  color: #aaaaaa;
-}
-
+/* ============================================
+   ANIMACIONES
+   ============================================ */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -121,22 +34,9 @@ p {
   }
 }
 
-.footer {
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-}
-
-.footer p {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #333333;
-  text-transform: uppercase;
-  animation: none;
-  opacity: 1;
-}
-
+/* ============================================
+   CURSOR
+   ============================================ */
 .cursor {
   width: 12px;
   height: 12px;
@@ -148,6 +48,9 @@ p {
   transition: transform 0.1s ease;
 }
 
+/* ============================================
+   NAV
+   ============================================ */
 .nav {
   position: fixed;
   top: 0;
@@ -186,10 +89,203 @@ p {
 .nav-links a:hover {
   color: #ffffff;
 }
+
+/* ============================================
+   HERO
+   ============================================ */
 .hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 100px;
+  margin-top: -170px;
+
+
+}
+
+.hero h1 {
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: #ffffff;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero p {
+  font-size: 16px;
+  letter-spacing: 4px;
+  color: #888888;
+  margin-top: 10px;
+  text-transform: uppercase;
+  animation: fadeUp 1s ease 0.3s forwards;
+  opacity: 0;
+}
+
+.linea {
+  width: 60px;
+  height: 1px;
+  background-color: #ffffff;
+  margin: 30px auto;
+}
+
+.boton {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 40px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  animation: fadeUp 1s ease 0.6s forwards;
+  opacity: 0;
+}
+
+.boton:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* ============================================
+   SERVICIOS
+   ============================================ */
+.servicios {
+  display: flex;
+  width: 100%;
+  padding: 60px 40px;
+  border-top: 1px solid #222222;
+  gap: 60px;
+  margin-top: 80px;
+  animation: fadeUp 1s ease 0.9s forwards;
+  opacity: 0;
+}
+
+.servicio {
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+  padding: 30px;
+  border: 1px solid transparent;
+}
+
+.servicio h3 {
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.servicio p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #555555;
+  text-transform: none;
+}
+
+.servicio:hover {
+  border: 1px solid #333333;
+  transform: translateY(-5px);
+}
+
+.servicio:hover h3 {
+  color: #aaaaaa;
+}
+
+/* ============================================
+   WORK
+   ============================================ */
+.work {
+  width: 100%;
+  padding: 80px 40px;
+  border-top: 1px solid #222222;
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 0;
+  border-bottom: 1px solid #111111;
+  cursor: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.work-item:hover {
+  padding-left: 20px;
+  border-bottom: 1px solid #333333;
+}
+
+.work-num {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #333333;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.work-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.work-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.work-info p {
+  font-size: 11px;
+  display: block;
+  letter-spacing: 3px;
+  color: #444444;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.work-item:hover .work-info h3 {
+  color: #aaaaaa;
+}
+
+.work-arrow {
+  font-size: 18px;
+  color: #333333;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.work-item:hover .work-arrow {
+  transform: translateX(10px);
+  color: #ffffff;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  position: fixed;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #333333;
+  text-transform: uppercase;
 }
