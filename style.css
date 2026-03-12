@@ -157,10 +157,10 @@ body {
 .servicios {
   display: flex;
   width: 100%;
-  padding: 60px 40px;
+  padding: 40px 40px;
   border-top: 1px solid #222222;
   gap: 60px;
-  margin-top: 80px;
+  margin-top: 0;
   animation: fadeUp 1s ease 0.9s forwards;
   opacity: 0;
 }
@@ -203,7 +203,7 @@ body {
    ============================================ */
 .work {
   width: 100%;
-  padding: 80px 40px;
+  padding: 40px 40px;
   border-top: 1px solid #222222;
 }
 
@@ -254,7 +254,7 @@ body {
   letter-spacing: 3px;
   color: #444444;
   text-transform: uppercase;
-  margin-top: 6px;
+  margin-top:6px;
 }
 
 .work-item:hover .work-info h3 {
@@ -297,8 +297,9 @@ body {
   align-items: center;
   gap: 20px;
   width: 100%;
-  margin-top: 80px;
   padding: 0 40px;
+  margin-top: 120px;
+  margin-bottom: 0;
 }
 
 .section-label span {
