@@ -17,4 +17,9 @@ clicables.forEach((elemento) => {
         cursor.style.bordercolor = '#ffffff';
     });
 });
+const hero = document.querySelector('h1');
 
+window .addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    hero.style.transform = `translateY(${scrollY * 0.4}px)`;
+});
