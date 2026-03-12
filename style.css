@@ -396,3 +396,18 @@ body {
     padding: 0 24px;
   }
 }
+
+/* ============================================
+   GLITCH (PARPADEO)
+   ============================================ */
+@keyframes glitch {
+  0%   { filter: none; }
+  25%  { filter: brightness(1.5) blur(1px); }
+  50%  { filter: none; }
+  75%  { filter: brightness(0.7) blur(1px); }
+  100% { filter: none; }
+}
+
+.hero h1:hover {
+  animation: glitch 0.4s ease infinite;
+}
