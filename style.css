@@ -313,3 +313,49 @@ body {
   height: 1px;
   background-color: #1a1a1a;
 }
+/* ============================================
+   CONTACT
+   ============================================ */
+   .contact {
+  width: 100%;
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align:center;
+}
+
+.contact h2 {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.contact p {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #444444;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+   .servicio,
+   .work-item,
+   .contact h2,
+    .contact p,
+    .section-label {
+    opacity: 1;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

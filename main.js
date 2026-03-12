@@ -23,3 +23,19 @@ window .addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     hero.style.transform = `translateY(${scrollY * 0.4}px)`;
 });
+
+// ANIMACIONES AL SCROLL
+const elementos = document.querySelectorAll('.servicio, .work-item, .contact h2, .contact p, .section-label');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.3
+});
+elementos.forEach(elemento => {
+    observer.observe(elemento);     
+}); 
