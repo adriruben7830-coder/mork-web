@@ -39,3 +39,16 @@ const observer = new IntersectionObserver((entries) => {
 elementos.forEach(elemento => {
     observer.observe(elemento);     
 }); 
+// TEXTE REVEAL
+const titulo = document.querySelector('.hero h1');
+const texto = titulo.textContent;
+titulo.textContent = '';
+
+let i = 0;
+const intervalo = setInterval(() => {
+    titulo.textContent += texto[i];
+    i++;
+    if (i >= texto.length) {
+        clearInterval(intervalo);
+    }
+}, 135);
