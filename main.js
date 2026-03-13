@@ -1,3 +1,4 @@
+window.scrollTo(0, 0);
 const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', e => {
@@ -18,6 +19,7 @@ clicables.forEach((elemento) => {
     });
 });
 const hero = document.querySelector('h1');
+hero.style.transform = 'translateY(0px)';
 
 window .addEventListener('scroll', () => {
     const scrollY = window.scrollY;
