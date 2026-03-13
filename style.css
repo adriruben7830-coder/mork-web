@@ -10,7 +10,7 @@
 
 body {
   cursor: none;
-  background-color: #000000;
+  background: linear-gradient(180deg, #050510 0%, #000000 40%);
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   min-height: 100vh;
