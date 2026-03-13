@@ -78,3 +78,17 @@
   line-height: 1.8;
   max-width:600px;
 }
+.btn-volver {
+  display: inline-block;
+  margin-bottom: 80px;
+  padding: 0px 40px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #666666;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-volver:hover {
+  color: #ffffff;
+}
