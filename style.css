@@ -11,6 +11,7 @@
 body {
   cursor: none;
   background: linear-gradient(180deg, #050510 0%, #000000 40%);
+  background-attachment:fixed;
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   min-height: 100vh;
