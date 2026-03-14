@@ -218,14 +218,17 @@ body {
   padding: 30px 0;
   border-bottom: 1px solid #111111;
   cursor: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   width: 100%;
   text-align: left;
+  position: relative;
+  overflow: hidden;
 }
 
 .work-item:hover {
   padding-left: 20px;
   border-bottom: 1px solid #333333;
+  background: linear-gradient(90deg, #0a0a0a 0%, trasnparent 100%);
 }
 
 .work-num {
@@ -415,4 +418,29 @@ body {
 
 .hero h1:hover {
   animation: glitch 0.4s ease infinite;
+}
+
+.work-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 0%;
+  height: 1px;
+  background: #ffffff;
+  transition: all 0.6s ease;
+}
+
+.work-item:hover::after {
+  width: 100%;
+}
+
+.work-item:hover h3 {
+text-shadow: 0 0 20px rgba( 255, 255, 255, 0.3);
+letter-spacing: 1px;
+}
+
+.work-item:hover .work-arrow {
+  transform: translateX(8px);
+  opacity: 1;
 }
