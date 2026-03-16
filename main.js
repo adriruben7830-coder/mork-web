@@ -36,7 +36,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, {
-    threshold: 0.3
+    threshold: 0.05
 });
 elementos.forEach(elemento => {
     observer.observe(elemento);     
