@@ -92,3 +92,14 @@
 .btn-volver:hover {
   color: #ffffff;
 }
+
+.proyecto-imagen {
+  width: 100%;
+  padding: 0 40px 60px 40px;
+}
+
+.proyecto-iamgen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
