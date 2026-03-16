@@ -1,7 +1,6 @@
 /* PROYECTO HERO */
-
 .proyecto-hero {
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,33 +16,34 @@
 }
 
 .proyecto-hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    text-align: center;
-    font-size: 120px;
-    font-weight: 400;
-    letter-spacing: 20px;
-    color: #ffffff;
-    line-height: 1;
-    margin-bottom: 20px;
-    }
-
-    .proyecto-hero p {
-    font-size: 12px;
-    letter-spacing: 4px;
-    color: #666666;
-    text-transform: uppercase;
-    }
-    
-    /* PROYECTO INFO */
-.proyecto-info {
-    text-align: left;
-    width: 100%;
-    padding: 60px 40px;
-    border-top: 1px solid #222222;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  font-size: 100px;
+  font-weight: 400;
+  letter-spacing: 15px;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 20px;
 }
+
+.proyecto-hero p {
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #666666;
+  text-transform: uppercase;
+}
+
+/* PROYECTO INFO */
+.proyecto-info {
+  text-align: left;
+  width: 100%;
+  padding: 60px 40px;
+  border-top: 1px solid #222222;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
 .proyecto-meta {
   display: flex;
   align-items: flex-start;
@@ -76,40 +76,22 @@
   font-size: 16px;
   color: #888888;
   line-height: 1.8;
-  max-width:600px;
-}
-.btn-volver {
-  display: inline-block;
-  margin-bottom: 80px;
-  padding: 0px 40px;
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #666666;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn-volver:hover {
-  color: #ffffff;
+  max-width: 600px;
 }
 
-.proyecto-imagen {
-  width: 100%;
-  padding: 0 40px 60px 40px;
-}
-
+/* IMAGEN */
 .proyecto-imagen {
   width: 100%;
   padding: 0;
   position: relative;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .proyecto-imagen img {
   width: 100%;
   height: auto;
   display: block;
-  max-height: 50vh;
+  max-height: 55vh;
   object-fit: cover;
 }
 
@@ -133,4 +115,21 @@
   height: 40%;
   background: linear-gradient(to top, #000000, transparent);
   z-index: 1;
+}
+
+/* BACK */
+.btn-volver {
+  display: inline-block;
+  margin-bottom: 80px;
+  padding: 0px 40px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #666666;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  color: #ffffff;
 }
