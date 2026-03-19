@@ -6,12 +6,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none !important;
 }
 
 body {
-  cursor: none;
   background: linear-gradient(180deg, #050510 0%, #000000 40%);
-  background-attachment:fixed;
+  background-attachment: fixed;
   color: #ffffff;
   font-family: 'Space Grotesk', sans-serif;
   min-height: 100vh;
@@ -19,36 +19,43 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  animation: pageFadeIn 0.6s ease forwards;
 }
 
 /* ============================================
    ANIMACIONES
    ============================================ */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glitch {
+  0%   { filter: none; }
+  25%  { filter: brightness(1.5) blur(1px); }
+  50%  { filter: none; }
+  75%  { filter: brightness(0.7) blur(1px); }
+  100% { filter: none; }
 }
 
 /* ============================================
    CURSOR
    ============================================ */
 .cursor {
-  width: 12px;
-  height: 12px;
-  border: 1px solid #ffffff;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.1s ease;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
 }
-
 /* ============================================
    NAV
    ============================================ */
@@ -61,7 +68,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .nav-logo {
@@ -95,15 +102,54 @@ body {
    HERO
    ============================================ */
 .hero {
+  position: relative;
   min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url('zeus.jpg');
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.hero-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-3d canvas {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
   padding-top: 100px;
-  margin-top: -170px;
-
-
 }
 
 .hero h1 {
@@ -114,6 +160,10 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   animation: fadeUp 1s ease forwards;
   line-height: 1;
+}
+
+.hero h1:hover {
+  animation: glitch 0.4s ease infinite;
 }
 
 .hero p {
@@ -160,7 +210,7 @@ body {
 .servicios {
   display: flex;
   width: 100%;
-  padding: 40px 40px;
+  padding: 40px;
   border-top: 1px solid #222222;
   gap: 60px;
   margin-top: 0;
@@ -206,7 +256,7 @@ body {
    ============================================ */
 .work {
   width: 100%;
-  padding: 40px 40px;
+  padding: 40px;
   border-top: 1px solid #222222;
 }
 
@@ -218,7 +268,6 @@ body {
   gap: 20px;
   padding: 30px 0;
   border-bottom: 1px solid #111111;
-  cursor: none;
   transition: all 0.4s ease;
   width: 100%;
   text-align: left;
@@ -229,7 +278,27 @@ body {
 .work-item:hover {
   padding-left: 20px;
   border-bottom: 1px solid #333333;
-  background: linear-gradient(90deg, #0a0a0a 0%, trasnparent 100%);
+  background: linear-gradient(90deg, #0a0a0a 0%, transparent 100%);
+}
+
+.work-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #ffffff;
+  transition: all 0.6s ease;
+}
+
+.work-item:hover::after {
+  width: 100%;
+}
+
+.work-item:hover h3 {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
 }
 
 .work-num {
@@ -262,7 +331,7 @@ body {
   letter-spacing: 3px;
   color: #444444;
   text-transform: uppercase;
-  margin-top:6px;
+  margin-top: 6px;
 }
 
 .work-item:hover .work-info h3 {
@@ -277,29 +346,14 @@ body {
 }
 
 .work-item:hover .work-arrow {
-  transform: translateX(10px);
+  transform: translateX(8px);
   color: #ffffff;
+  opacity: 1;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-.footer {
-  position: fixed;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
-}
-
-.footer p {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #333333;
-  text-transform: uppercase;
-}
 /* ============================================
    SECTIONS
-   ============================================ */  
+   ============================================ */
 .section-label {
   display: flex;
   align-items: center;
@@ -317,21 +371,23 @@ body {
   color: #ffffff;
   white-space: nowrap;
 }
+
 .section-line {
   flex: 1;
   height: 1px;
   background-color: #1a1a1a;
 }
+
 /* ============================================
    CONTACT
    ============================================ */
-   .contact {
+.contact {
   width: 100%;
   padding: 100px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align:center;
+  text-align: center;
 }
 
 .contact h2 {
@@ -341,6 +397,8 @@ body {
   color: #ffffff;
   line-height: 1.2;
   margin-bottom: 24px;
+  opacity: 1;
+  transform: none;
 }
 
 .contact p {
@@ -349,99 +407,55 @@ body {
   color: #444444;
   text-transform: uppercase;
   margin-bottom: 40px;
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #333333;
+  text-transform: uppercase;
 }
 
 /* ============================================
    SCROLL ANIMATIONS
    ============================================ */
-   .servicio,
-   .work-item,
-   .contact h2,
-    .contact p,
-    .section-label {
-    opacity: 1;
-    transform: translateY(60px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+.servicio,
+.work-item,
+.section-label {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================================
    RESPONSIVE MÓVIL
    ============================================ */
 @media (max-width: 768px) {
-  .nav {
-    padding: 20px 24px;
-  }
-  .nav-links {
-    gap: 20px;
-  }
-  .hero h1 {
-    font-size: 60px;
-    letter-spacing: 10px;
-  }
-  .servicios {
-    flex-direction: column;
-    gap: 0px;
-    padding: 40px 24px;
-  }
-  .work {
-    padding: 40px 24px;
-  }
-  .work-item {
-    gap: 12px;
-  }
-.work-info h3 {
-    font-size: 16px;
-  }
-  .contact h2 {
-    font-size: 32px;
-    letter-spacing: 2px;
-  }
-  .section-label {
-    padding: 0 24px;
-  }
-}
-
-/* ============================================
-   GLITCH (PARPADEO)
-   ============================================ */
-@keyframes glitch {
-  0%   { filter: none; }
-  25%  { filter: brightness(1.5) blur(1px); }
-  50%  { filter: none; }
-  75%  { filter: brightness(0.7) blur(1px); }
-  100% { filter: none; }
-}
-
-.hero h1:hover {
-  animation: glitch 0.4s ease infinite;
-}
-
-.work-item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0%;
-  width: 0%;
-  height: 1px;
-  background: #ffffff;
-  transition: all 0.6s ease;
-}
-
-.work-item:hover::after {
-  width: 100%;
-}
-
-.work-item:hover h3 {
-text-shadow: 0 0 20px rgba( 255, 255, 255, 0.3);
-letter-spacing: 1px;
-}
-
-.work-item:hover .work-arrow {
-  transform: translateX(8px);
-  opacity: 1;
+  .nav { padding: 20px 24px; }
+  .nav-links { gap: 20px; }
+  .hero h1 { font-size: 60px; letter-spacing: 10px; }
+  .servicios { flex-direction: column; gap: 0; padding: 40px 24px; }
+  .work { padding: 40px 24px; }
+  .work-item { gap: 12px; }
+  .work-info h3 { font-size: 16px; }
+  .contact h2 { font-size: 32px; letter-spacing: 2px; }
+  .section-label { padding: 0 24px; }
 }

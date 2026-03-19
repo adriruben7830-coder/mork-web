@@ -1,70 +1,68 @@
 window.scrollTo(0, 0);
+
 const cursor = document.querySelector('.cursor');
-
 document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX - 6 + 'px';
-  cursor.style.top = e.clientY - 6 + 'px';
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
 });
 
-const clicables = document.querySelectorAll('a, .servicio');
-
-clicables.forEach((elemento) => {
-    elemento.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(3)';
-        cursor.style.bordercolor = '#ffffff';
-    });
-    elemento.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-        cursor.style.bordercolor = '#ffffff';
-    });
-});
-const hero = document.querySelector('h1');
-hero.style.transform = 'translateY(0px)';
-
-window .addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    hero.style.transform = `translateY(${scrollY * 0.4}px)`;
+document.addEventListener('mouseover', e => {
+  if (e.target.closest('a') || e.target.closest('.servicio')) {
+    cursor.style.width = '30px';
+    cursor.style.height = '30px';
+    cursor.style.background = 'transparent';
+    cursor.style.border = '1px solid #ffffff';
+  } else {
+    cursor.style.width = '10px';
+    cursor.style.height = '10px';
+    cursor.style.background = '#ffffff';
+    cursor.style.border = 'none';
+  }
 });
 
-// ANIMACIONES AL SCROLL
-const elementos = document.querySelectorAll('.servicio, .work-item, .contact h2, .contact p, .section-label');
+const heroH1 = document.querySelector('.hero h1');
+if (heroH1) {
+  window.addEventListener('scroll', () => {
+    heroH1.style.transform = `translateY(${window.scrollY * 0.4}px)`;
+  });
+}
 
+const elementos = document.querySelectorAll('.servicio, .work-item, .section-label');
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, {
-    threshold: 0.05
-});
-elementos.forEach(elemento => {
-    observer.observe(elemento);     
-}); 
-// TEXTE REVEAL
-const titulo = document.querySelector('.hero h1');
-const texto = titulo.textContent;
-titulo.textContent = '';
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
 
-let i = 0;
-const intervalo = setInterval(() => {
+elementos.forEach(el => observer.observe(el));
+
+window.addEventListener('load', () => {
+  elementos.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight + 200) {
+      el.classList.add('visible');
+    }
+  });
+});
+
+const titulo = document.querySelector('.hero h1');
+if (titulo) {
+  const texto = titulo.textContent;
+  titulo.textContent = '';
+  let i = 0;
+  const intervalo = setInterval(() => {
     titulo.textContent += texto[i];
     i++;
-    if (i >= texto.length) {
-        clearInterval(intervalo);
-    }
-}, 135);
-
-// NAV BLUR AL SCROLL 
-const nav = document.querySelector('nav');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        nav.style.backdropFilter = 'blur(10px)';
-        nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-    } else {
-        nav.style.backdropFilter = 'none';
-        nav.style.backgroundColor = 'transparent';
-    }
+    if (i >= texto.length) clearInterval(intervalo);
+  }, 135);
 }
-);
+
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.style.backdropFilter = 'blur(10px)';
+    nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  } else {
+    nav.style.backdropFilter = 'none';
+    nav.style.backgroundColor = 'transparent';
+  }
+});
