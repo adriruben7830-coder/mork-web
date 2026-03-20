@@ -16,12 +16,14 @@ const positionAttribute = geometry.attributes.position;
 const originalPositions = positionAttribute.array.slice();
 
 const material = new THREE.MeshPhysicalMaterial({
-  color: 0x888888,
-  metalness: 1,
-  roughness: 0.08,
-  reflectivity: 1,
-  clearcoat: 1,
-  clearcoatRoughness: 0.1,
+  color: 0x222222,
+  metalness: 0.9,
+  roughness: 0.3,
+  reflectivity: 0.5,
+  clearcoat: 0.5,
+  clearcoatRoughness: 0.3,
+  transparent: true,
+  opacity: 0.4,
   wireframe: false,
 });
 
@@ -33,7 +35,7 @@ const keyLight = new THREE.DirectionalLight(0xffffff, 6);
 keyLight.position.set(4, 4, 4);
 scene.add(keyLight);
 
-const rimLight = new THREE.DirectionalLight(0x4444ff, 3);
+const rimLight = new THREE.DirectionalLight(0x333333, 2);
 rimLight.position.set(-4, -2, -4);
 scene.add(rimLight);
 
