@@ -66,3 +66,25 @@ window.addEventListener('scroll', () => {
     nav.style.backgroundColor = 'transparent';
   }
 });
+
+// PAGE TRANSITIONS
+const transition = document.querySelector('.page-transition');
+
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  if (!href.startsWith('#') && !href.startsWith('mailto')) {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      transition.classList.add('active');
+      setTimeout(() => {
+        window.location.href = href;
+      }, 400);
+    });
+  }
+});
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    transition.classList.remove('active');
+  }, 100);
+});

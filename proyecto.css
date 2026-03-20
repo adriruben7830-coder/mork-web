@@ -133,3 +133,41 @@
 .btn-volver:hover {
   color: #ffffff;
 }
+
+/* PROYECTO NAV */
+.proyecto-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 40px;
+  margin-bottom: 80px;
+}
+
+.btn-next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.next-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #444444;
+  text-transform: uppercase;
+}
+
+.next-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #ffffff;
+  font-weight: 700;
+  transition: letter-spacing 0.3s ease;
+}
+
+.btn-next:hover .next-title {
+  letter-spacing: 4px;
+  color: #aaaaaa;
+}
