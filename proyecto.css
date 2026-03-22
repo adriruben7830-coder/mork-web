@@ -171,3 +171,29 @@
   letter-spacing: 4px;
   color: #aaaaaa;
 }
+
+
+/* DEMO BUTTON */
+.proyecto-demo {
+  width: 100%;
+  padding: 0 40px;
+  margin-bottom: 40px;
+}
+
+.btn-demo {
+  display: inline-block;
+  padding: 14px 40px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-demo:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
