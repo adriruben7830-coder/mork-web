@@ -24,7 +24,7 @@ fadeEls.forEach(el => observer.observe(el));
 
 // NAV BLUR ON SCROLL
 const nav = document.querySelector('.mn-nav');
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => { 
   if (window.scrollY > 50) {
     nav.style.backdropFilter = 'blur(10px)';
     nav.style.backgroundColor = 'rgba(0,0,0,0.8)';
