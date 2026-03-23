@@ -199,3 +199,38 @@
   background-color: #ffffff;
   color: #000000;
 }
+
+/* CASE STUDY */
+.proyecto-case {
+  width: 100%;
+  padding: 80px 40px;
+  border-top: 1px solid #222222;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.case-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.case-line {
+  width: 30px;
+  height: 1px;
+  background: #333333;
+}
+
+.case-text {
+  font-size: 14px;
+  color: #888888;
+  line-height: 1.8;
+}
