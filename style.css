@@ -221,10 +221,22 @@ body {
 
 .servicio {
   flex: 1;
-  text-align: center;
+  text-align: left;
   transition: all 0.3s ease;
   padding: 30px;
   border: 1px solid transparent;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.servicio-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: #555555;
+  line-height: 1;
+  transition: color 0.3s ease;
 }
 
 .servicio h3 {
@@ -232,24 +244,57 @@ body {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 0;
   transition: color 0.3s ease;
 }
 
 .servicio p {
   font-size: 13px;
   letter-spacing: 1px;
-  color: #555555;
+  color: #888888;
   text-transform: none;
+  line-height: 1.7;
+}
+
+.servicio-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.servicio-list li {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #444444;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.servicio-list li::before {
+  content: '— ';
+  color: #333333;
 }
 
 .servicio:hover {
   border: 1px solid #333333;
+  border-top: 1px solid #333333;
   transform: translateY(-5px);
+}
+
+.servicio:hover .servicio-num {
+  color: #222222;
 }
 
 .servicio:hover h3 {
   color: #aaaaaa;
+}
+
+.servicio:hover .servicio-list li {
+  color: #666666;
 }
 
 /* ============================================
