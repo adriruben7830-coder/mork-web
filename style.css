@@ -495,15 +495,131 @@ body {
    RESPONSIVE MÓVIL
    ============================================ */
 @media (max-width: 768px) {
-  .nav { padding: 20px 24px; }
-  .nav-links { gap: 20px; }
-  .hero h1 { font-size: 60px; letter-spacing: 10px; }
-  .servicios { flex-direction: column; gap: 0; padding: 40px 24px; }
-  .work { padding: 40px 24px; }
-  .work-item { gap: 12px; }
-  .work-info h3 { font-size: 16px; }
-  .contact h2 { font-size: 32px; letter-spacing: 2px; }
-  .section-label { padding: 0 24px; }
+
+  /* NAV */
+  .nav {
+    padding: 20px 24px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 999;
+    .nav-hamburger.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-hamburger.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+  
+  .nav-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+  }
+  /* HERO */
+  .hero h1 {
+    font-size: 72px;
+    letter-spacing: 10px;
+  }
+
+  .hero-bg {
+    background-position: center center;
+    opacity: 0.35;
+  }
+
+  .hero-content {
+    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  /* SERVICES */
+  .servicios {
+    flex-direction: column;
+    gap: 0;
+    padding: 40px 24px;
+  }
+
+  .servicio {
+    padding: 24px 0;
+  }
+
+  /* WORK */
+  .work {
+    padding: 40px 24px;
+  }
+
+  .work-item {
+    gap: 12px;
+  }
+
+  .work-info h3 {
+    font-size: 16px;
+  }
+
+  .work-thumb {
+    display: none;
+  }
+
+  /* SECTION LABELS */
+  .section-label {
+    padding: 0 24px;
+    margin-top: 60px;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 60px 24px;
+  }
+
+  .contact h2 {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+
 }
 /* ============================================
    PAGE TRANSITIONS
