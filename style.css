@@ -535,7 +535,7 @@ body {
     font-size: 18px;
     letter-spacing: 6px;
   }
-  
+
   .nav-hamburger {
     display: flex;
     flex-direction: column;
@@ -561,8 +561,9 @@ body {
   }
 
   .hero-bg {
-    background-position: center center;
-    opacity: 0.35;
+    background-attachment: scroll;
+    background-position: center top;
+    opacity: 0.4;
   }
 
   .hero-content {
