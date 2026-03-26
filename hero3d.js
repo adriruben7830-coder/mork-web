@@ -18,14 +18,11 @@ const vertexShader = `
 
   void main() {
     vNormal = normalize(normalMatrix * normal);
-
     vec3 pos = position * (1.0 + uBreath * 0.06);
     float edge = length(position) * 0.3;
     pos += normal * sin(edge * 8.0 + uTime * 0.5) * 0.015;
-
     vec3 viewDir = normalize(-vec3(modelViewMatrix * vec4(pos, 1.0)));
     vFresnel = pow(1.0 - abs(dot(vNormal, vec3(0.0, 0.0, 1.0))), 4.0);
-
     gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
   }
 `;
@@ -37,22 +34,18 @@ const fragmentShader = `
   uniform float uBreath;
 
   void main() {
-    vec3 obsidian    = vec3(0.02, 0.02, 0.03);
-    vec3 rimColor    = vec3(0.25, 0.28, 0.35);
-    vec3 glintColor  = vec3(0.6, 0.65, 0.75);
-
+    vec3 obsidian   = vec3(0.02, 0.02, 0.03);
+    vec3 rimColor   = vec3(0.4, 0.5, 0.7);
+    vec3 glintColor = vec3(0.9, 0.95, 1.0);
     float breathGlow = uBreath * 0.15;
     vec3 color = obsidian + rimColor * vFresnel * 0.8 + glintColor * pow(vFresnel, 6.0);
     color += glintColor * breathGlow;
-
     float alpha = 0.55 + vFresnel * 0.4 + breathGlow;
-
     gl_FragColor = vec4(color, alpha);
   }
 `;
 
-// FORMA DE OBSIDIANA — icosaedro con fracturas suaves
-const geometry = new THREE.IcosahedronGeometry(1.7, 3);
+const geometry = new THREE.IcosahedronGeometry(0.6, 3);
 const posAttr = geometry.attributes.position;
 for (let i = 0; i < posAttr.count; i++) {
   const x = posAttr.getX(i);
@@ -75,9 +68,9 @@ const material = new THREE.ShaderMaterial({
 });
 
 const crystal = new THREE.Mesh(geometry, material);
+crystal.position.set(-2.6, -0.3, 0);
 scene.add(crystal);
 
-// WIREFRAME MUY SUTIL
 const wireMat = new THREE.MeshBasicMaterial({
   color: 0x334455,
   wireframe: true,
@@ -85,6 +78,7 @@ const wireMat = new THREE.MeshBasicMaterial({
   opacity: 0.04,
 });
 const wire = new THREE.Mesh(geometry, wireMat);
+wire.position.set(-2.6, -0.3, 0);
 scene.add(wire);
 
 const keyLight = new THREE.DirectionalLight(0xffffff, 5);
@@ -116,12 +110,10 @@ function animate() {
   targetX += (mouseX - targetX) * 0.04;
   targetY += (mouseY - targetY) * 0.04;
 
-  // Respiración — seno suave
   const breath = Math.sin(time * 0.6) * 0.5 + 0.5;
   material.uniforms.uBreath.value = breath;
   material.uniforms.uTime.value = time;
 
-  // Rotación lenta — da un par de vueltas y casi para
   rotSpeed *= 0.998;
   if (rotSpeed < 0.001) rotSpeed = 0.001;
   rotationY += rotSpeed + targetX * 0.005;
