@@ -234,3 +234,62 @@
   color: #888888;
   line-height: 1.8;
 }
+
+@media (max-width: 768px) {
+
+  /* HERO */
+  .proyecto-hero {
+    padding: 140px 24px 60px 24px;
+  }
+
+  .proyecto-hero h1 {
+    font-size: 36px !important;
+    letter-spacing: 2px !important;
+    word-break: break-word;
+  }
+
+  /* INFO */
+  .proyecto-info {
+    padding: 40px 24px;
+    gap: 40px;
+  }
+
+  .proyecto-meta {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* IMAGEN */
+  .proyecto-imagen img {
+    max-height: 30vh;
+  }
+
+  /* CASE STUDY */
+  .proyecto-case {
+    grid-template-columns: 1fr !important;
+    gap: 40px;
+    padding: 60px 24px;
+  }
+
+  /* DEMO BUTTON */
+  .proyecto-demo {
+    padding: 0 24px;
+  }
+
+  /* NAV PROYECTO */
+  .proyecto-nav {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 24px;
+    margin-bottom: 60px;
+  }
+
+  .btn-next {
+    align-items: flex-start;
+  }
+
+  .next-title {
+    font-size: 16px;
+  }
+
+}
