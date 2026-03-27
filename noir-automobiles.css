@@ -7,17 +7,6 @@
   box-sizing: border-box;
   cursor: none !important;
 }
-/* CURSOR */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: #ffffff;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-}
 
 /* PAGE TRANSITION */
 .page-transition {
