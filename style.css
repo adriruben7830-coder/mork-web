@@ -661,3 +661,60 @@ body {
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
+
+/* ============================================
+   CONTACT FORM
+   ============================================ */
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #222222;
+  padding: 16px 0;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #333333;
+  letter-spacing: 3px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #ffffff;
+}
+
+.form-group textarea {
+  resize: none;
+  line-height: 1.8;
+}
+
+.contact-form .boton {
+  align-self: center;
+  margin-top: 24px;
+  background: transparent;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+}
+
+.contact-form .boton:hover {
+  background: #ffffff;
+  color: #000000;
+}
